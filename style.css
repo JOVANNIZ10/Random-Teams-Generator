@@ -1,0 +1,21 @@
+body {
+    margin:0; /* Quita el margen por defecto del navegador */
+    padding:0;/* Quita el relleno por defecto */
+    font-family: 'Poppins', sans-serif;/* Define la fuente de texto (moderna y legible) */
+    background-color: #0e0e0e;/* Fondo oscuro para toda la página */
+    color:#fff;/* Texto blanco para buen contraste */
+    display: flex;/* Usa flexbox para centrar el contenido */
+    justify-content: center;/* Centra horizontalmente el contenido */
+    align-items: center;/* Centra verticalmente el contenido */
+    min-height:80vh;/* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+.app-container{
+    background-color: #1a1a1a;/* Fondo ligeramente más claro que el body */
+    padding: 30px;/* Espaciado interno (relleno) para separar el contenido del borde */
+    border-radius: 20px;/* Bordes redondeados */
+    box-shadow: 0 0 15px rgba(255,255,255,0.1); /* Sombra suave para resaltar el contenedor */
+    width:70%;/* Ocupa el 90% del ancho de la pantalla (en móviles) */
+    max-width:500px;/* Limita el ancho máximo en pantallas grandes */
+    text-align: center; /* Centra el texto y elementos dentro */
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generador de equipos aleatorios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app-container">
+        <h1 class="app-title">Generador De Equipos Random</h1>
+        <section class="form-container">
+            <form id="teamForm">
+                <div>
+                    <label for="teamCount">Cantidad de equipos</label>
+                    <select name="teamCount" id="teamCount">
+                        <option value="">Selecciona una opción</option>
+                        <option value="2">2 equipos</option>
+                        <option value="3">3 equipos</option>
+                        <option value="4">4 equipos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="participants">Participantes</label>
+                    <textarea id="participants" name="participants"
+                        placeholder="Escribe los nombres separados por comas o saltos de línea" required></textarea>
+                </div>
+
+                <button type="submit" class="generate-btn">Crear equipos</button>
+            </form>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
