@@ -80,3 +80,32 @@ textarea:focus {
     background-color: #1a1a1a;
     color: #ffffff;
 }
+ .firma {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6); /* Blanco translúcido */
+  font-family: 'Poppins', sans-serif;
+  pointer-events: none; /* No interfiere con clics */
+}
+.firma span {
+  font-weight: 500;
+}
+#timer-message {
+    position: fixed;
+    top: 20px; /* Separación desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    z-index: 1000;
+    color: white;
+    background-color: #1a1a1a;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(255,255,255,1);
+}
