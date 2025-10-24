@@ -24,7 +24,7 @@ body {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #ffffff;
-    text-shadow: 0 0 5px #ffffff;
+   /* text-shadow: 0 0 5px #ffffff;*/
 }
 
 /* Estilo para el formulario */
@@ -92,20 +92,22 @@ textarea:focus {
 .firma span {
   font-weight: 500;
 }
-#timer-message {
+#message {
     position: fixed;
     top: 20px; /* Separación desde la parte superior */
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    max-width: 500px;
+    max-width: 2000px;
     z-index: 1000;
-    color: white;
+    color: rgb(255, 0, 0);
     background-color: #1a1a1a;
     padding: 0.5rem;
     font-size: 1rem;
     text-align: center;
     border-radius: 1rem;
     box-sizing: border-box;
-    box-shadow: 0 0 15px rgba(255,255,255,1);
+    box-shadow: 0 0 15px rgb(255, 0, 0);
+    display:none;
+
 }
