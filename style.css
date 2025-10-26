@@ -1,6 +1,7 @@
 body {
     margin:0; /* Quita el margen por defecto del navegador */
     padding:0;/* Quita el relleno por defecto */
+    padding-top:60px;/* Espacio superior para evitar solapamiento con el mensaje */
     font-family: 'Poppins', sans-serif;/* Define la fuente de texto (moderna y legible) */
     background-color: #0e0e0e;/* Fondo oscuro para toda la página */
     color:#fff;/* Texto blanco para buen contraste */
@@ -8,9 +9,10 @@ body {
     justify-content: center;/* Centra horizontalmente el contenido */
     align-items: center;/* Centra verticalmente el contenido */
     min-height:80vh;/* Asegura que el body ocupe toda la altura de la ventana */
+    flex-direction:column;/* Alinea los elementos en columna */
 }
 
-.app-container{
+.form-container{
     background-color: #1a1a1a;/* Fondo ligeramente más claro que el body */
     padding: 30px;/* Espaciado interno (relleno) para separar el contenido del borde */
     border-radius: 20px;/* Bordes redondeados */
@@ -18,6 +20,7 @@ body {
     width:70%;/* Ocupa el 90% del ancho de la pantalla (en móviles) */
     max-width:500px;/* Limita el ancho máximo en pantallas grandes */
     text-align: center; /* Centra el texto y elementos dentro */
+    
 }
 /* Estilo para el título */
 .app-title {
@@ -111,3 +114,46 @@ textarea:focus {
     display:none;
 
 }
+
+#results-container {
+    background-color: #1a1a1a;
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,1);
+    width: 80%;
+    max-width: 550px;
+    margin-top: 40px;
+    display:none;
+
+}
+
+#results-container ul,
+#results-container ol {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#results-container li {
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background-color: transparent; /* sin fondo adicional */
+    box-shadow: none; /* sin sombra individual */
+    color: #fff;
+}
+
+#results-container li:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color:#252525
+}
+
+
+
+
+
+
