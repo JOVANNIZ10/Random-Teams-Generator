@@ -25,7 +25,7 @@ body {
 /* Estilo para el título */
 .app-title {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #ffffff;
    /* text-shadow: 0 0 5px #ffffff;*/
 }
@@ -150,6 +150,7 @@ textarea:focus {
 #results-container li:first-child {
     background-color:#252525
 }
+
 
 
 
