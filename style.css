@@ -124,6 +124,7 @@ textarea:focus {
     max-width: 550px;
     margin-top: 40px;
     display:none;
+    margin-bottom:40px;
 
 }
 
