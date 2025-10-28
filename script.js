@@ -64,4 +64,9 @@ form.onsubmit=function(event){
 teamCount.addEventListener("change", function(){
     mensaje.style.display="none"
     equiposSeleccionados=true;
+    if(teamsGenerated){
+        let resultsContainer = document.getElementById("results-container");
+        resultsContainer.innerHTML="";
+        teamsGenerated=false;
+    }
 })
