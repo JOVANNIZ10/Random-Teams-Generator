@@ -3,10 +3,16 @@ let teamCount=document.getElementById("teamCount")
 let mensaje=document.getElementById("message")
 let participants=document.getElementById("participants")
 let equiposSeleccionados=false;
+let teamsGenerated=false;
 let teamMatesArray=[];
 
 form.onsubmit=function(event){
     event.preventDefault()
+    if(teamsGenerated){
+        let resultsContainer = document.getElementById("results-container");
+        resultsContainer.innerHTML="";
+        teamsGenerated=false;
+    }
     if(!teamCount.value){
         mensaje.innerText="Por favor, selecciona el número de equipos."
         mensaje.style.display="block"
@@ -26,7 +32,7 @@ form.onsubmit=function(event){
         mensaje.style.display="block"
         return;
     }
-
+    teamsGenerated=true;
     mensaje.style.display="none"
     let resultsContainer = document.getElementById("results-container");
     for(let i=0; i<numeroEquipos; i++){
