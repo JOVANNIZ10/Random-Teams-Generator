@@ -57,8 +57,11 @@ form.onsubmit=function(event){
     resultsContainer.style.display="block";
     
     let ulFirstTeam=document.getElementById("team1");
+    let ulLastTeam=document.getElementById("team"+numeroEquipos);
     ulFirstTeam.children[0].style.borderTopLeftRadius="20px";
     ulFirstTeam.children[0].style.borderTopRightRadius="20px";
+    ulLastTeam.children[ulLastTeam.children.length-1].style.borderBottom="none";
+    
 }
 
 teamCount.addEventListener("change", function(){
