@@ -1,40 +1,67 @@
-let form = document.getElementById("teamForm")
-let teamCount=document.getElementById("teamCount")
-let mensaje=document.getElementById("message")
-let participants=document.getElementById("participants")
-let equiposSeleccionados=false;
+const form = document.getElementById("teamForm")
+const teamCount=document.getElementById("teamCount")
+const mensaje=document.getElementById("message")
+const participants=document.getElementById("participants")
+const resultsContainer=document.getElementById("results-container")
+
 let teamsGenerated=false;
 let teamMatesArray=[];
 
 form.onsubmit=function(event){
     event.preventDefault()
     if(teamsGenerated){
-        let resultsContainer = document.getElementById("results-container");
-        resultsContainer.innerHTML="";
-        teamsGenerated=false;
+        emptyResults();
     }
     if(!teamCount.value){
-        mensaje.innerText="Por favor, selecciona el número de equipos."
-        mensaje.style.display="block"
+        showMessage("Por favor, selecciona el número de equipos.");
         return;
     }
     
     let numeroEquipos=teamCount.value;
     teamMatesArray = participants.value.split('\n').filter(name => name.trim() !== "");
+    
     if(teamMatesArray.length==0){
-        mensaje.innerText="Por favor, ingresa al menos un participante."
-        mensaje.style.display="block"
+        showMessage("Por favor, ingresa al menos un participante.");
         return;
     }
     
     if(teamMatesArray.length<numeroEquipos){
-        mensaje.innerText="El número de equipos no puede ser mayor que el número de participantes."
-        mensaje.style.display="block"
+        showMessage("El número de equipos no puede ser mayor que el número de participantes.");
         return;
     }
+    
+    hideMessage();
+    
+    createTeams(numeroEquipos);
+
+    distributePlayers(numeroEquipos);
+
+    showResults();
+
+    fixStyle(numeroEquipos);
+
     teamsGenerated=true;
+    
+}
+
+teamCount.addEventListener("change", function(){
     mensaje.style.display="none"
-    let resultsContainer = document.getElementById("results-container");
+    if(teamsGenerated){
+        resultsContainer.innerHTML="";
+        teamsGenerated=false;
+    }
+})
+
+let hideMessage=()=>{
+    mensaje.style.display="none"
+}
+
+let showMessage=(text)=>{
+    mensaje.innerText=text
+    mensaje.style.display="block"
+}
+
+let createTeams=(numeroEquipos)=>{
     for(let i=0; i<numeroEquipos; i++){
         let ul= document.createElement("ul");
         ul.id="team"+(i+1);
@@ -43,7 +70,9 @@ form.onsubmit=function(event){
         liName.innerText="Equipo "+(i+1);
         document.getElementById("team"+(i+1)).appendChild(liName);
     }
-    // Repartir los nombres aleatoriamente entre los equipos
+}
+
+let distributePlayers=(numeroEquipos)=>{
     while(teamMatesArray.length > 0){
         for(let i=0; i<numeroEquipos; i++){
             if(teamMatesArray.length === 0) break;
@@ -54,22 +83,21 @@ form.onsubmit=function(event){
             document.getElementById("team"+(i+1)).appendChild(li);
         }
     }
+}
+
+let emptyResults=()=>{
+    resultsContainer.innerHTML="";
+    teamsGenerated=false;
+}
+
+let showResults=()=>{
     resultsContainer.style.display="block";
-    
+}
+
+let fixStyle=(numeroEquipos)=>{
     let ulFirstTeam=document.getElementById("team1");
     let ulLastTeam=document.getElementById("team"+numeroEquipos);
     ulFirstTeam.children[0].style.borderTopLeftRadius="20px";
     ulFirstTeam.children[0].style.borderTopRightRadius="20px";
     ulLastTeam.children[ulLastTeam.children.length-1].style.borderBottom="none";
-    
 }
-
-teamCount.addEventListener("change", function(){
-    mensaje.style.display="none"
-    equiposSeleccionados=true;
-    if(teamsGenerated){
-        let resultsContainer = document.getElementById("results-container");
-        resultsContainer.innerHTML="";
-        teamsGenerated=false;
-    }
-})
