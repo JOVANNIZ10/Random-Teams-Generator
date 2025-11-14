@@ -8,6 +8,9 @@ A simple web application that generates random teams from a list of participants
 - Randomly distribute players into teams.
 - Responsive and modern UI.
 
+## 🌐 Live Demo
+[Click here to try it out](https://random-teams-generator-phi.vercel.app/)
+
 ## 📂 Project Structure
 ```
 index.html    → Main page
